@@ -43,3 +43,22 @@ h1{
 h2{
 	font-size: 1.8em;
 }
+
+#preload{
+	font-size: 1000%;
+	animation-name: animation, fontt;
+    animation-duration: 4s;
+}
+
+#divMask{
+	display: none;
+}
+
+
+@keyframes animation {
+    0%   {-webkit-transform: rotate(1deg) s;}
+    25%  {-webkit-transform: rotate(-1deg);}
+    50%  {-webkit-transform: rotate(1deg);}
+    75%  {-webkit-transform: rotate(-1deg);}
+    100% {-webkit-transform: rotate(0deg);}
+}
