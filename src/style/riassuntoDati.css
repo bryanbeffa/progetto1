@@ -1,0 +1,60 @@
+*{
+	padding: 0px;
+	margin: 0px;
+	font-family: "helvetica";
+}
+
+body{
+  	background-repeat: repeat;
+  	background-image: url("img/pattern.png");
+  	background-size: 200px 200px;
+  	text-align: center;
+}
+
+input{
+	width: 80%;
+	font-size: 90%;
+	border: 2px solid;
+	margin-bottom: 10px;
+	background-color: rgb(60, 80, 100);
+	padding: 1.5% 0.5%;
+	color: white;
+}
+
+#formMask{
+	font-size: 150%;
+	background-color: rgba(255, 255, 255, 0.8);
+	width: 40%;
+	margin: auto;
+	text-align: center;
+}
+
+.button{
+	color: white;
+	width: 60%;
+	margin: 2px;
+	font-size: 1.2em;
+	padding: 1%;
+	border: none;
+	margin-top: 20px;
+	background-color: rgb(60, 80, 100);
+	-webkit-transition: width 0.5s;
+  		transition: width 0.5s;
+	cursor: pointer;
+}
+
+.button:hover{
+	width: 90%;
+}
+
+table{
+	width: 100%;
+}
+
+td:nth-child(odd){
+	text-align: right;
+	width: 50%;
+}
+#buttonsAlign{
+	text-align: center;
+}

@@ -1,0 +1,3 @@
+1. Controllare che i file csv esistano già
+2. Crearlo se non esiste.
+3. Scrivere i dati dell'utente
