@@ -36,8 +36,8 @@
             <taskproperty id="tpd8" name="coordinator" type="default" valuetype="text"/>
             <taskproperty id="tpd9" name="predecessorsr" type="default" valuetype="text"/>
         </taskproperties>
-        <task id="1" name="Progetto1" color="#00ff66" meeting="false" start="2018-09-05" duration="20" complete="7" thirdDate="2018-09-07" thirdDate-constraint="0" expand="true">
-            <task id="4" name="Progettazione" color="#000000" meeting="false" start="2018-09-12" duration="4" complete="66" thirdDate="2018-09-12" thirdDate-constraint="0" expand="true">
+        <task id="1" name="Progetto1" color="#00ff66" meeting="false" start="2018-09-05" duration="20" complete="13" thirdDate="2018-09-07" thirdDate-constraint="0" expand="true">
+            <task id="4" name="Progettazione" color="#000000" meeting="false" start="2018-09-12" duration="4" complete="81" thirdDate="2018-09-12" thirdDate-constraint="0" expand="true">
                 <task id="262" name="Lettura QDC" color="#8cb6ce" meeting="false" start="2018-09-12" duration="1" complete="100" thirdDate="2018-09-19" thirdDate-constraint="0" expand="true">
                     <depend id="229" type="2" difference="0" hardness="Strong"/>
                 </task>
@@ -52,19 +52,19 @@
                     <depend id="3" type="2" difference="0" hardness="Strong"/>
                     <depend id="350" type="2" difference="0" hardness="Strong"/>
                 </task>
-                <task id="436" name="Design" color="#8cb6ce" meeting="false" start="2018-09-21" duration="1" complete="0" thirdDate="2018-08-29" thirdDate-constraint="0" expand="true"/>
+                <task id="436" name="Design" color="#8cb6ce" meeting="false" start="2018-09-21" duration="1" complete="90" thirdDate="2018-08-29" thirdDate-constraint="0" expand="true"/>
                 <task id="350" name="Studio componenti" color="#8cb6ce" meeting="false" start="2018-09-21" duration="1" complete="100" thirdDate="2018-09-05" thirdDate-constraint="0" expand="true">
                     <depend id="18" type="2" difference="0" hardness="Strong"/>
                 </task>
             </task>
-            <task id="3" name="Sviluppo" color="#0033ff" meeting="false" project="true" start="2018-09-26" duration="12" complete="0" thirdDate="2018-09-07" thirdDate-constraint="0" expand="true">
-                <task id="18" name="Pagina di registrazione" color="#8cb6ce" meeting="false" start="2018-09-26" duration="2" complete="0" thirdDate="2018-09-14" thirdDate-constraint="0" expand="true">
+            <task id="3" name="Sviluppo" color="#0033ff" meeting="false" project="true" start="2018-09-26" duration="12" complete="15" thirdDate="2018-09-07" thirdDate-constraint="0" expand="true">
+                <task id="18" name="Pagina di registrazione" color="#8cb6ce" meeting="false" start="2018-09-26" duration="2" complete="100" thirdDate="2018-09-14" thirdDate-constraint="0" expand="true">
                     <depend id="28" type="2" difference="0" hardness="Strong"/>
                 </task>
                 <task id="28" name="Convalida dati" color="#8cb6ce" meeting="false" start="2018-10-03" duration="2" complete="0" thirdDate="2018-09-14" thirdDate-constraint="0" expand="true">
                     <depend id="33" type="2" difference="0" hardness="Strong"/>
                 </task>
-                <task id="33" name="Conferma dati" color="#8cb6ce" meeting="false" start="2018-10-10" duration="1" complete="0" thirdDate="2018-09-14" thirdDate-constraint="0" expand="true">
+                <task id="33" name="Conferma dati" color="#8cb6ce" meeting="false" start="2018-10-10" duration="1" complete="20" thirdDate="2018-09-14" thirdDate-constraint="0" expand="true">
                     <depend id="41" type="2" difference="0" hardness="Strong"/>
                 </task>
                 <task id="41" name="Codice lato server" color="#8cb6ce" meeting="false" start="2018-10-12" duration="1" complete="0" thirdDate="2018-09-14" thirdDate-constraint="0" expand="true">
