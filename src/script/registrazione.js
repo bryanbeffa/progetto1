@@ -65,7 +65,7 @@
 			return true;
 		}
 
-		//metodo che abilita abilita il funzionamento del bottone avanti se tutti i campi obbligatori sono compilati
+		//metodo che abilita abilita il funzionamento del bottone avanti se tutti i campi obbligatori sono compilati e invia i valori alla pagina di riassunto
 		function enableNextButton(){
 			if(checkMainInputs()){
 				if(confirm("Sicuro di voler procedere?")){
@@ -97,14 +97,14 @@
 				for (var i = 0; i < value.length; i++) {
 					if(!Number.isInteger(parseInt(value[i]))){
 						document.getElementById("civicNumber").value = null;
-						document.getElementById("civicNumber").style.border = "2px solid red";
+						document.getElementById("civicNumber").style.background = "tomato";
 						break;
 					}
-					document.getElementById("civicNumber").style.border = "2px solid lightgreen";
+					document.getElementById("civicNumber").style.background = "lightgreen";
 				}
 			}else{
 				document.getElementById("civicNumber").value = null;
-				document.getElementById("civicNumber").style.border = "2px solid red";		
+				document.getElementById("civicNumber").style.background = "tomato";		
 			}
 
 		}
@@ -113,8 +113,8 @@
 		function checkText(id){
 			value = inputList[id].value;
 			if(value != null && value.length > 0 && value.length <= 50){
-				inputList[id].style.border = "2px solid lightgreen";
+				inputList[id].style.background = "lightgreen";
 			}else{
-				inputList[id].style.border = "2px solid red";
+				inputList[id].style.background = "tomato";
 			}
 		}

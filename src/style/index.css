@@ -12,6 +12,7 @@ body{
   	background-repeat: no-repeat;
   	text-align: center;
 	font-family: sans-serif;
+	background-attachment: fixed; 	
 }
 		
 #signUpButton:hover{

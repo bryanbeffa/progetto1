@@ -1,0 +1,74 @@
+*{
+	padding: 0px;
+	margin: 0px;
+	font-family: "helvetica";
+}
+
+body{
+	background-color: white;
+  	text-align: center;
+}
+
+#formMask{
+	font-size: 1vw;
+	width: 90%;
+	margin: auto;
+	text-align: center;
+	color: white;
+}
+
+#button{
+	color: black;
+	width: 20%;
+	margin-top: 2vw;
+	font-size: 1.2vw;
+	padding: 0.4vw;
+	border: 0.1vw solid black;
+	margin-bottom: 2vw;
+	background-color: rgba(255, 255, 255, 0.5);
+	-webkit-transition: width 0.5s;
+  	transition: width 0.5s;
+	cursor: pointer;
+}
+
+#button:hover{
+	background-color: rgba(255, 255, 255, 0.9);
+}
+
+table{
+	width: 100%;
+	margin-top: 3vw;
+	border-collapse: collapse;
+	margin-bottom: 0.2vw;
+	border: 0.1vw solid black;
+	box-shadow: 2vw 2vw 2vw black;
+}
+
+th{
+	background-color: black;
+	color: white;
+	height: 2.3vw;
+}
+
+td{
+	height: 2vw;
+	border-right: 0.1vw black solid;
+	color: black;
+	word-wrap: break-word;
+}
+
+tr:nth-child(odd){
+	background-color: white;
+}
+
+tr:nth-child(even){
+	background-color: lightgray;
+}
+
+tr:hover{
+	background-color: gray;
+}
+
+a{
+	text-decoration: none;
+}

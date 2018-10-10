@@ -3,6 +3,7 @@
 <head>
 	<title>Riassunto - dati</title>
 	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link rel="stylesheet" type="text/css" href="style/riassuntoDati.css">
 </head>
 <body onresize="centreFormMask()">
@@ -106,7 +107,7 @@
 					+ "&gener=" + labelList[9].textContent
 					+ "&hobby=" + labelList[10].textContent
 					+ "&profession=" + labelList[11].textContent;
-					window.location.href = 'registrazione.php' + queryString;		
+					window.location.href = 'registrazione.html' + queryString;		
 			}
 		}
 
@@ -114,7 +115,7 @@
 		//metodo che conferma i dati e permette l'accesso alla pagina di visualizzazione dei dati
 		function confirmData(){
 			if(confirm("Sei sicuro?"))
-				window.location.href = "finalPage.html"
+				window.location.href = "tuttiDati.php"
 		}
 	</script>
 </body>

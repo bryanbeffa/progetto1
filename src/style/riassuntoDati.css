@@ -5,41 +5,44 @@
 }
 
 body{
-  	background-repeat: repeat;
-  	background-image: url("img/pattern.png");
-  	background-size: 200px 200px;
+	background-color: black;
+  	background-repeat: no-repeat;
+  	background-image: url("img/index.jpg");
+  	background-size: 100% auto;
   	text-align: center;
+  	background-attachment: fixed; 
 }
 
 input{
 	width: 80%;
-	font-size: 90%;
-	border: 2px solid;
-	margin-bottom: 10px;
-	background-color: rgb(60, 80, 100);
-	padding: 1.5% 0.5%;
-	color: white;
+	font-size: 1.3vw;
+	border: 0.1vw solid;
+	margin-bottom: 0.3vw;
+	background-color: rgba(255, 255, 255, 0.7);
+	padding: 0.2vw 0.5vw;
+	color: black;
 }
 
 #formMask{
-	font-size: 150%;
-	background-color: rgba(255, 255, 255, 0.8);
+	font-size: 1.3vw;
+	background-color: rgba(0, 0, 0, 0.7);
 	width: 40%;
 	margin: auto;
 	text-align: center;
+	color: white;
 }
 
 .button{
-	color: white;
-	width: 60%;
-	margin: 2px;
-	font-size: 1.2em;
-	padding: 1%;
+	color: black;
+	width: 50%;
+	margin-top: 2vw;
+	font-size: 1.2vw;
+	padding: 0.4vw;
 	border: none;
-	margin-top: 20px;
-	background-color: rgb(60, 80, 100);
+	margin-top: 2vw;
+	background-color: rgba(255, 255, 255, 0.4);
 	-webkit-transition: width 0.5s;
-  		transition: width 0.5s;
+  	transition: width 0.5s;
 	cursor: pointer;
 }
 
@@ -51,10 +54,11 @@ table{
 	width: 100%;
 }
 
-td:nth-child(odd){
-	text-align: right;
-	width: 50%;
-}
 #buttonsAlign{
 	text-align: center;
+}
+
+td{
+	width: 50%;
+	height: 2vw;
 }
