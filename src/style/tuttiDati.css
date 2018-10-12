@@ -5,8 +5,13 @@
 }
 
 body{
+	background-repeat: no-repeat;
+	background-image: url("img/index.jpg");
+	background-size: 100% auto;
 	background-color: white;
   	text-align: center;
+  	background-attachment: fixed;
+  	background-color: black;
 }
 
 #formMask{
@@ -19,29 +24,28 @@ body{
 
 #button{
 	color: black;
-	width: 20%;
-	margin-top: 2vw;
-	font-size: 1.2vw;
-	padding: 0.4vw;
+	width: 30%;
+	margin: 2px;
+	font-size: 1.4vw;
+	padding: 1%;
 	border: 0.1vw solid black;
-	margin-bottom: 2vw;
-	background-color: rgba(255, 255, 255, 0.5);
-	-webkit-transition: width 0.5s;
-  	transition: width 0.5s;
+	margin-top: 2vw;
+	font-weight: bold;
+	margin-bottom: 3vw;
 	cursor: pointer;
 }
 
 #button:hover{
-	background-color: rgba(255, 255, 255, 0.9);
+	background-color: rgb(255, 255, 255);
 }
 
 table{
+	opacity: 0.9;
 	width: 100%;
 	margin-top: 3vw;
 	border-collapse: collapse;
 	margin-bottom: 0.2vw;
 	border: 0.1vw solid black;
-	box-shadow: 2vw 2vw 2vw black;
 }
 
 th{
@@ -55,18 +59,15 @@ td{
 	border-right: 0.1vw black solid;
 	color: black;
 	word-wrap: break-word;
+	padding: none;
 }
 
-tr:nth-child(odd){
-	background-color: white;
-}
-
-tr:nth-child(even){
-	background-color: lightgray;
+tr{
+	background-color: rgba(255, 255, 255, 0.8);
 }
 
 tr:hover{
-	background-color: gray;
+	background-color: rgba(190, 190, 255, 0.9);
 }
 
 a{

@@ -11,51 +11,117 @@
 		<table>
 			<tr>
 				<td><label>Nome*:</label></td>
-				<td><input type="text" name="name" placeholder="Your name" id="name" onchange="checkText(0)"></td>
+				<td><input type="text" name="name" placeholder="Your name" id="name" onchange="checkText(0)">
+					<sub class="tooltip">
+						<img src="style/img/info.png" class="info-logo">  
+						<span class="tooltiptext">
+							<p>
+								Caratteri consentiti:<hr>
+								Letterali<br>
+								Spazio<br>
+								<hr>
+								Carattere spazio
+							</p>
+						</span>
+					</sub>
+				</td>
 			</tr>
 			<tr>
 				<td><label>Cognome*:</label></td>
-				<td><input type="text" name="surname" placeholder="Your surname" id="surname" onchange="checkText(1)"></td>
+				<td><input type="text" name="surname" placeholder="Your surname" id="surname" onchange="checkText(1)">
+					<sub>
+						<img src="style/img/info.png" class="info-logo">
+					</sub>
+				</td>
 			</tr>
 			<tr>
 				<td><label>Data di nascita*:</label></td>
-				<td><input type="date" name="date" id="date"></td>
+				<td><input type="date" name="date" id="date" onchange="checkDate(2)">
+					<sub>
+						<img src="style/img/info.png" class="info-logo">
+					</sub>
+				</td>
 			</tr>
 			<tr>
 				<td><label>Indirizzo*:</label></td>
-				<td><input type="text" name="address" placeholder="Your address" id="address"></td>
+				<td><input type="text" name="address" placeholder="Your address" id="address">
+					<sub>
+						<img src="style/img/info.png" class="info-logo">
+					</sub>
+				</td>
 			</tr>
 			<tr>
 				<td><label>No. Civico*:</label></td>
-				<td><input type="text" name="civicNumber" placeholder="Your Civic Number" id="civicNumber" onchange="setCivicNumber()"></td>
+				<td><input type="text" name="civicNumber" placeholder="Your Civic Number" id="civicNumber" onchange="setCivicNumber(4)">
+					<sub>
+						<img src="style/img/info.png" class="info-logo">
+					</sub>
+				</td>
 			</tr>
 			<tr>
 				<td><label>Città*:</label></td>
-				<td><input type="text" name="city" placeholder="Your city" id="city"></td>
+				<td><input type="text" name="city" placeholder="Your city" id="city">
+					<sub>
+						<img src="style/img/info.png" class="info-logo">
+					</sub>
+				</td>
 			</tr>
 			<tr>	
 				<td><label>Nap*:</label></td>
-				<td><input type="Number" name="nap" placeholder="Your Nap" id="nap"></td>
+				<td><input type="text" name="nap" placeholder="Your Nap" id="nap" onchange="checkNap(6)">
+					<sub>
+						<img src="style/img/info.png" class="info-logo">
+					</sub>
+				</td>
 			</tr>	
 			<tr>	
 				<td><label>No. Telefono*:</label></td>
-				<td><input type="text" name="tel" placeholder="Your tel number" id="phoneNumber"></td>
+				<td><input type="text" name="tel" placeholder="Your tel number" id="phoneNumber">
+					<sub>
+						<img src="style/img/info.png" class="info-logo">
+					</sub>
+				</td>
 			</tr>
 			<tr>
 				<td><label>E-mail*:</label></td>
-				<td><input type="text" name="email" placeholder="Your e-mail" id="email"></td>
+				<td><input type="text" name="email" placeholder="Your e-mail" id="email">
+					<sub>
+						<img src="style/img/info.png" class="info-logo">
+					</sub>
+				</td>
 			</tr>
 			<tr>
 				<td><label>Genere (sesso)*:</label></td>
-				<td><input type="text" name="gener" placeholder="Your gener" id="gener"></td>
+				<td>F<input type="radio" name="gender" class="gender" value="F">
+					M<input type="radio" name="gender" class="gender" value="M"><br>
+					Altro<input type="radio" name="gender" class="gender" value="Altro">
+				</td>
 			</tr>
 			<tr>	
 				<td><label>Hobby:</label></td>
-				<td><input type="text" name="hobby" placeholder="Your hobby"><br></td>
+				<td><input type="text" name="hobby" placeholder="Your hobby" onchange="checkHobby(12)">
+					<sub class="tooltip">
+						<img src="style/img/info.png" class="info-logo">
+						<span class="tooltiptext">
+							<p>
+								Numero Massimo di caratteri: 500
+							</p>
+						</span>
+					</sub>
+				</td>
 			</tr>
 			<tr>	
 				<td><label>Professione:</label></td>
-				<td><input type="text" name="profession" placeholder="Your profession"></td>
+				<td><input type="text" name="profession" placeholder="Your profession" onchange="checkHobby(13)">
+					<sub class="tooltip">
+						<img src="style/img/info.png" class="info-logo">
+						<span class="tooltiptext">
+							<p>
+								Numero Massimo di caratteri: 500
+							</p>
+						</span>
+					</sub>
+				</td>
 			</tr>	
 			<tr>
 				<td colspan="2"><b><label>Il carattere * indica che è un campo obbligatorio</label></b></td>

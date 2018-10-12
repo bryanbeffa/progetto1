@@ -7,7 +7,7 @@
 	<link rel="stylesheet" type="text/css" href="style/riassuntoDati.css">
 </head>
 <body onresize="centreFormMask()">
-	<form id="formMask">
+	<form id="formMask" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" method="post">
 		<table>
 			<tr>
 				<td><label>Nome*:</label></td>
@@ -63,7 +63,9 @@
 			</tr>
 		</table>
 	</form>
-
+	<?php 
+		include 'php/riassuntoDati.php';
+	?>
 	<script type="text/javascript">
 		//variabile che contiene l'elemento 
 		var formMask = document.getElementById("formMask");

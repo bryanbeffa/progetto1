@@ -18,11 +18,12 @@ body{
 input{
 	width: 80%;
 	font-size: 1.3vw;
-	border: 0.1vw solid;
-	margin-bottom: 0.3vw;
-	background-color: rgba(255, 255, 255, 0.7);
-	padding: 0.2vw 0.5vw;
-	color: black;
+	border: none;
+	margin-top: 1vw;
+	background-color: rgba(255, 255, 255, 0.0);
+	border-bottom: 0.2vw solid white;
+	color: white;
+	transition: border-bottom 1s;
 }
 
 #formMask{
@@ -63,4 +64,36 @@ td{
 
 #buttonsAlign{
 	text-align: center;
+}
+
+.info-logo{
+	width: 1vw;
+	height: 1vw;
+}
+
+.gender{
+	width: 20%;
+}
+
+.tooltip {
+    position: relative;
+    display: inline-block;
+}
+
+.tooltip .tooltiptext {
+    visibility: hidden;
+    width: 2000%;
+    background-color: white;
+    color: black;
+    text-align: center;
+    border-radius: 0.2vw;
+    padding: 1vw 0;
+
+    /* Position the tooltip */
+    position: absolute;
+    z-index: 1;
+}
+
+.tooltip:hover .tooltiptext {
+    visibility: visible;
 }
