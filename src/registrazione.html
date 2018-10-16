@@ -6,7 +6,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link rel="stylesheet" type="text/css" href="style/registrazione.css">
 </head>
-<body onresize="centreFormMask()">
+<body onresize="centreFormMask()" onload="loadPage(), setValues()">
 	<form id="formMask">
 		<table>
 			<tr>
@@ -16,11 +16,10 @@
 						<img src="style/img/info.png" class="info-logo">  
 						<span class="tooltiptext">
 							<p>
-								Caratteri consentiti:<hr>
-								Letterali<br>
-								Spazio<br>
-								<hr>
-								Carattere spazio
+								Caratteri consentiti:<br>
+								<b>letterali e spazi, <br>
+									massimo 50 caratteri
+								</b>
 							</p>
 						</span>
 					</sub>
@@ -29,72 +28,126 @@
 			<tr>
 				<td><label>Cognome*:</label></td>
 				<td><input type="text" name="surname" placeholder="Your surname" id="surname" onchange="checkText(1)">
-					<sub>
+					<sub class="tooltip">
 						<img src="style/img/info.png" class="info-logo">
+						<span class="tooltiptext">
+							<p>
+								Caratteri consentiti:<br>
+								<b>letterali e spazi, <br>
+									massimo 50 caratteri
+								</b>
+							</p>
+						</span>
 					</sub>
 				</td>
 			</tr>
 			<tr>
 				<td><label>Data di nascita*:</label></td>
 				<td><input type="date" name="date" id="date" onchange="checkDate(2)">
-					<sub>
+					<sub class="tooltip">
 						<img src="style/img/info.png" class="info-logo">
+						<span class="tooltiptext">
+							<p>
+								Selezionare una data coerente: <br>
+								<b>la data non deve essere futura</b>
+							</p>
+						</span>
 					</sub>
 				</td>
 			</tr>
 			<tr>
 				<td><label>Indirizzo*:</label></td>
 				<td><input type="text" name="address" placeholder="Your address" id="address">
-					<sub>
+					<sub class="tooltip">
 						<img src="style/img/info.png" class="info-logo">
+						<span class="tooltiptext">
+							<p>
+								Caratteri consentiti:<br>
+								<b>letterali e spazi, <br>
+									massimo 50 caratteri
+								</b>
+							</p>
+						</span>
 					</sub>
 				</td>
 			</tr>
 			<tr>
 				<td><label>No. Civico*:</label></td>
 				<td><input type="text" name="civicNumber" placeholder="Your Civic Number" id="civicNumber" onchange="setCivicNumber(4)">
-					<sub>
+					<sub class="tooltip">
 						<img src="style/img/info.png" class="info-logo">
+						<span class="tooltiptext">
+							<p>
+								Formato corretto composto da: <br>
+								<b>1 a 5 caratteri<br>
+								lettere e/o numeri</b>
+							</p>
+						</span>
 					</sub>
 				</td>
 			</tr>
 			<tr>
 				<td><label>Città*:</label></td>
 				<td><input type="text" name="city" placeholder="Your city" id="city">
-					<sub>
+					<sub class="tooltip">
 						<img src="style/img/info.png" class="info-logo">
+						<span class="tooltiptext">
+							<p>
+								Caratteri consentiti:<br>
+								<b>letterali e spazi, <br>
+									massimo 50 caratteri
+								</b>
+							</p>
+						</span>
 					</sub>
 				</td>
 			</tr>
 			<tr>	
 				<td><label>Nap*:</label></td>
 				<td><input type="text" name="nap" placeholder="Your Nap" id="nap" onchange="checkNap(6)">
-					<sub>
+					<sub class="tooltip">
 						<img src="style/img/info.png" class="info-logo">
+						<span class="tooltiptext">
+							<p>
+								Il nap è composto da: <br>
+								<b>4 o 5 cifre</b>
+							</p>
+						</span>
 					</sub>
 				</td>
 			</tr>	
 			<tr>	
 				<td><label>No. Telefono*:</label></td>
 				<td><input type="text" name="tel" placeholder="Your tel number" id="phoneNumber">
-					<sub>
+					<sub class="tooltip">
 						<img src="style/img/info.png" class="info-logo">
+						<span class="tooltiptext">
+							<p>
+								Caratteri consentiti:<br>
+								<b>cifre, spazi e "-"</b><br>
+							</p>
+						</span>
 					</sub>
 				</td>
 			</tr>
 			<tr>
 				<td><label>E-mail*:</label></td>
 				<td><input type="text" name="email" placeholder="Your e-mail" id="email">
-					<sub>
+					<sub class="tooltip">
 						<img src="style/img/info.png" class="info-logo">
+						<span class="tooltiptext">
+							<p>
+								Inserire un indirizzo e-mail nel formato corretto: <br><b>example@example.example</b>
+							</p>
+						</span>
 					</sub>
 				</td>
 			</tr>
 			<tr>
 				<td><label>Genere (sesso)*:</label></td>
-				<td>F<input type="radio" name="gender" class="gender" value="F">
-					M<input type="radio" name="gender" class="gender" value="M"><br>
-					Altro<input type="radio" name="gender" class="gender" value="Altro">
+				<td>F<input type="radio" name="gender" class="gender" value="F" onclick="setGender('F')">
+					M<input type="radio" name="gender" class="gender" value="M" id="male" onclick="setGender('M')"><br>
+					Altro<input type="radio" name="gender" class="gender" value="Altro" onclick="setGender('Altro')">
 				</td>
 			</tr>
 			<tr>	
@@ -104,7 +157,7 @@
 						<img src="style/img/info.png" class="info-logo">
 						<span class="tooltiptext">
 							<p>
-								Numero Massimo di caratteri: 500
+								Numero Massimo di caratteri: <b>500</b>
 							</p>
 						</span>
 					</sub>
@@ -117,7 +170,7 @@
 						<img src="style/img/info.png" class="info-logo">
 						<span class="tooltiptext">
 							<p>
-								Numero Massimo di caratteri: 500
+								Numero Massimo di caratteri: <b>500</b>
 							</p>
 						</span>
 					</sub>

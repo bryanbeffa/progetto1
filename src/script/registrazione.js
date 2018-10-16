@@ -2,9 +2,10 @@
 		var formMask = document.getElementById("formMask");
 		//variabile contenete la lista degli input
 		var inputList = document.getElementsByTagName("input");
+		//variabile contenente il valore del genere, valore di default M
+		var genderValue = "M";
 
 		centreFormMask();
-		setValues();
 
 		//metodo che setta i valori in caso di ritorno dalla pagina di riassunto dati
 		function setValues(){
@@ -26,6 +27,18 @@
 			var availHeight = window.innerHeight;
 			
 			formMask.style.marginTop = (availHeight-formMaskHeight)/2 + "px";
+		}
+
+		//metodo che cancella tutti i dati e viene richiamato quando carica la pagina
+		function loadPage(){
+			//numero di input da cancellare meno i 2 bottoni finali
+			var inputLength = inputList.length-2;
+			for (var i = 0; i <  inputLength; i++) {
+				inputList[i].value = "";
+				inputList[i].style.borderBottom = "0.2vw solid white";
+			}
+			//seleziono il radio button M
+			document.getElementById('male').checked = "checked";
 		}
 
 		//metodo che cancella tutti i dati inseriti
@@ -51,17 +64,20 @@
 			var nap = document.getElementById("nap");
 			var phoneNumber = document.getElementById("phoneNumber");
 			var email = document.getElementById("email");
-			var gener = document.getElementById("gener");
 
-			var mainInputs = [name, surname, date, address, civicNumber, city, nap, phoneNumber, email,gener]; 
+			var mainInputs = [name, surname, date, address, civicNumber, city, nap, phoneNumber, email]; 
 			return mainInputs;
 		}
 
 		//metodo che controlla che tutti i campi principali (obbligatori) sono stati compilati
 		function checkMainInputs(){
 			var mainInputs = getMainInputs();
+			/* Controllo tutti che tutti gli input abbiano un valore valido. 
+			   Il valore del campo genere non viene controllato perché non può mai essere nullo o non valido
+			*/
 			for (var i = 0; i <= mainInputs.length-1; i++) {
 				if(mainInputs[i].value == null || mainInputs[i].value == ""){
+					console.log("il danno è: " + mainInputs[i])
 					return false;
 				}
 			}
@@ -81,9 +97,9 @@
 					+ "&nap=" + inputList[6].value
 					+ "&phoneNumber=" + inputList[7].value
 					+ "&email=" + inputList[8].value
-					+ "&gener=" + inputList[9].value
-					+ "&hobby=" + inputList[10].value
-					+ "&profession=" + inputList[11].value;
+					+ "&gener=" + genderValue
+					+ "&hobby=" + inputList[12].value
+					+ "&profession=" + inputList[13].value;
 					window.location.href = 'riassuntoDati.php' + queryString;
 				}
 			}else{
@@ -97,7 +113,7 @@
 			var regex = /^[a-zA-Z0-9]+$/;
 			var civicNumber = regex.test(value);
 
-			if(civicNumber && value.length <= 4 && value.length > 0 && value != "0"){
+			if(civicNumber && value.length <= 4 && value.length > 0 && value != 0){
 				inputList[id].style.borderBottom = "0.2vw solid green";
 			}else{
 				inputList[id].style.borderBottom = "0.2vw solid red";
@@ -138,6 +154,7 @@
 				inputList[id].style.borderBottom = "0.2vw solid green";
 			}else{
 				inputList[id].style.borderBottom = "0.2vw solid red";
+
 			}
 		}
 
@@ -160,3 +177,8 @@
 				inputList[id].style.borderBottom = "0.2vw solid red";
 			}
 		}
+
+		//metodo che serve a settare il valore del campo genere
+		function setGender(value){
+			genderValue = value;
+		}	
