@@ -73,15 +73,20 @@
 		function checkMainInputs(){
 			var mainInputs = getMainInputs();
 			/* Controllo tutti che tutti gli input abbiano un valore valido. 
-			   Il valore del campo genere non viene controllato perché non può mai essere nullo o non valido
+			   Il valore del campo genere non viene controllato perché non può mai essere non valido
 			*/
-			for (var i = 0; i <= mainInputs.length-1; i++) {
-				if(mainInputs[i].value == null || mainInputs[i].value == ""){
-					console.log("il danno è: " + mainInputs[i])
-					return false;
+			if(checkText(0) && checkText(1)){
+				if(checkDate(2) && checkText(3)){
+					if(checkCivicNumber(4) && checkText(5)){
+						if(checkNap(6)){
+							if(checkEmail(8)){
+								return true;
+							}
+						}
+					}
 				}
 			}
-			return true;
+			return false;
 		}
 
 		//metodo che abilita abilita il funzionamento del bottone avanti se tutti i campi obbligatori sono compilati e invia i valori alla pagina di riassunto
@@ -108,26 +113,30 @@
 		}
 
 		//metodo che controlla se il numero civico è valido
-		function setCivicNumber(id){
+		function checkCivicNumber(id){
 			var value = inputList[id].value;
 			var regex = /^[a-zA-Z0-9]+$/;
 			var civicNumber = regex.test(value);
 
 			if(civicNumber && value.length <= 4 && value.length > 0 && value != 0){
 				inputList[id].style.borderBottom = "0.2vw solid green";
-			}else{
-				inputList[id].style.borderBottom = "0.2vw solid red";
+				return true;
 			}
+			inputList[id].style.borderBottom = "0.2vw solid red";
+			return false;
 		}
 
 		//metodo che serve a controllare i valori degli input di tipo testo con gli stessi criteri. Es nome e cognome, città, via.
 		function checkText(id){
-			var value = inputList[id].value;
-			if(value != null && value.length > 0 && value.length <= 50){
+			var text = inputList[id].value;
+			text = text.trim();
+			var regex = /[a-zA-Z]+$/;
+			if(regex.test(text) && text.length <= 50){
 				inputList[id].style.borderBottom = "0.2vw solid green";
-			}else{
-				inputList[id].style.borderBottom = "0.2vw solid red";
+				return true;
 			}
+			inputList[id].style.borderBottom = "0.2vw solid red";
+			return false;
 		}
 
 		//metodo che controlla che sia stata inserita una data corretta
@@ -139,9 +148,10 @@
 			//controllo che la data non sia del futuro e che il valore non sia nullo
 			if(date.getTime()-userDate.getTime()>0 && !isNaN(userDate)) {
 				inputList[id].style.borderBottom = "0.2vw solid green";
-			}else{
-				inputList[id].style.borderBottom = "0.2vw solid red";
+				return true;
 			}
+			inputList[id].style.borderBottom = "0.2vw solid red";
+			return false;
 		}
 
 		//Metodo che serve a controllare che il campo nap
@@ -152,10 +162,10 @@
 			var isNumber = regex.test(nap);
 			if(isNumber && nap.length<6 && nap.length>3 ){
 				inputList[id].style.borderBottom = "0.2vw solid green";
-			}else{
-				inputList[id].style.borderBottom = "0.2vw solid red";
-
+				return true;
 			}
+			inputList[id].style.borderBottom = "0.2vw solid red";
+			return false;
 		}
 
 		//metodo che controllo che il numero di caratteri del campo hobby non sia superiore a 500 caratteri
@@ -163,9 +173,10 @@
 			var hobby = inputList[id].value;
 			if(hobby.length <= 500){
 				inputList[id].style.borderBottom = "0.2vw solid green";
-			}else{
-				inputList[id].style.borderBottom = "0.2vw solid red";
+				return true;
 			}
+			inputList[id].style.borderBottom = "0.2vw solid red";
+			return false;
 		}
 
 		//metodo che controllo che il numero di caratteri del campo profession non sia superiore a 500 caratteri
@@ -173,12 +184,26 @@
 			var profession = inputList[id].value;
 			if(profession.length <= 500){
 				inputList[id].style.borderBottom = "0.2vw solid green";
-			}else{
-				inputList[id].style.borderBottom = "0.2vw solid red";
+				return true;
 			}
+			inputList[id].style.borderBottom = "0.2vw solid red";
+			return false;
 		}
 
 		//metodo che serve a settare il valore del campo genere
 		function setGender(value){
 			genderValue = value;
-		}	
+		}
+
+		//metodo che serve a controllare la sintassi dell'email
+		function checkEmail(id){
+			var email = inputList[id].value;
+			var regex = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+			//controllo se l'email è valida
+			if(regex.test(email)){
+				inputList[id].style.borderBottom = " 0.2vw solid green";
+				return true;
+			}
+			inputList[id].style.borderBottom = " 0.2vw solid red";
+			return false;
+		}
