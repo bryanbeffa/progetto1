@@ -13,10 +13,15 @@
 			queryString = queryString.substring(1);
 			var queries = queryString.split("&");
 			for (var i = 0; i < inputList.length-2; i++){
-				//se la variabile è undefined non eseguo il codice
+				//se la variabile è undefined non eseguo il codice 
 				if(queries[i] != undefined){
 					var realValue = queries[i].split("=");
-					inputList[i].value = realValue[realValue.length-1];
+					//salto l'input del genere
+					if(i > 8){
+						inputList[i+2].value = realValue[realValue.length-1];						
+					}else{
+						inputList[i].value = realValue[realValue.length-1];	
+					}
 				}
 			}
 		}
@@ -52,7 +57,7 @@
 				}
 			}
 		}
-
+ 
 		//metodo che riceve in un array quali sono i campi principali (obbligatori)
 		function getMainInputs(){
 			var name = document.getElementById("name");
@@ -78,7 +83,7 @@
 			if(checkText(0) && checkText(1)){
 				if(checkDate(2) && checkText(3)){
 					if(checkCivicNumber(4) && checkText(5)){
-						if(checkNap(6)){
+						if(checkNap(6) && checkPhoneNumber(7)){
 							if(checkEmail(8)){
 								return true;
 							}
@@ -201,7 +206,21 @@
 			var regex = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
 			//controllo se l'email è valida
 			if(regex.test(email)){
-				inputList[id].style.borderBottom = " 0.2vw solid green";
+				inputList[id].style.borderBottom = "0.2vw solid green";
+				return true;
+			}
+			inputList[id].style.borderBottom = " 0.2vw solid red";
+			return false;
+		}
+
+		//metodo che controlla che il campo numero di telefono abbia solo cifre e lo formatta
+		function checkPhoneNumber(id){
+			var number = inputList[id].value;
+			number = number.trim();
+			var regex = /^[0-9 +-]+$/;
+			//controllo che il numero sia composto da almeno 10 caratteri e massimo 30. Si accettano "+", spazi e "-"
+			if(regex.test(number)){
+				inputList[id].style.borderBottom = "0.2vw solid green";
 				return true;
 			}
 			inputList[id].style.borderBottom = " 0.2vw solid red";

@@ -43,7 +43,7 @@
 			</tr>
 			<tr>
 				<td><label>Data di nascita*:</label></td>
-				<td><input type="date" name="date" id="date" onkeyup="checkDate(2)">
+				<td><input type="date" name="date" id="date" onkeyup="checkDate(2)" onchange="checkDate(2)">
 					<sub class="tooltip">
 						<img src="style/img/info.png" class="info-logo">
 						<span class="tooltiptext">
@@ -57,7 +57,7 @@
 			</tr>
 			<tr>
 				<td><label>Indirizzo*:</label></td>
-				<td><input type="text" name="address" placeholder="Your address" id="address">
+				<td><input type="text" name="address" placeholder="Your address" id="address" onkeyup="checkText(3)">
 					<sub class="tooltip">
 						<img src="style/img/info.png" class="info-logo">
 						<span class="tooltiptext">
@@ -88,7 +88,7 @@
 			</tr>
 			<tr>
 				<td><label>Città*:</label></td>
-				<td><input type="text" name="city" placeholder="Your city" id="city">
+				<td><input type="text" name="city" placeholder="Your city" id="city" onkeyup="checkText(5)">
 					<sub class="tooltip">
 						<img src="style/img/info.png" class="info-logo">
 						<span class="tooltiptext">
@@ -118,7 +118,7 @@
 			</tr>	
 			<tr>	
 				<td><label>No. Telefono*:</label></td>
-				<td><input type="text" name="tel" placeholder="Your tel number" id="phoneNumber">
+				<td><input type="text" name="tel" placeholder="Your tel number" id="phoneNumber" onkeyup="checkPhoneNumber(7)">
 					<sub class="tooltip">
 						<img src="style/img/info.png" class="info-logo">
 						<span class="tooltiptext">
