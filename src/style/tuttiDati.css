@@ -5,19 +5,13 @@
 }
 
 body{
-	background-repeat: no-repeat;
-	background-image: url("img/index.jpg");
-	background-size: 100% auto;
 	background-color: white;
   	text-align: center;
-  	background-attachment: fixed;
-  	background-color: black;
 }
 
 #formMask{
-	font-size: 1vw;
-	width: 90%;
-	margin: auto;
+	font-size: 0.9vw;
+	width: 100%;
 	text-align: center;
 	color: white;
 }
@@ -40,9 +34,7 @@ body{
 }
 
 table{
-	opacity: 0.9;
 	width: 100%;
-	margin-top: 3vw;
 	border-collapse: collapse;
 	margin-bottom: 0.2vw;
 	border: 0.1vw solid black;
@@ -56,10 +48,13 @@ th{
 
 td{
 	height: 2vw;
-	border-right: 0.1vw black solid;
 	color: black;
 	word-wrap: break-word;
 	padding: none;
+}
+
+td:nth-child(odd){
+	background-color: rgba(100, 100, 100, 0.2);
 }
 
 tr{
@@ -67,9 +62,14 @@ tr{
 }
 
 tr:hover{
-	background-color: rgba(190, 190, 255, 0.9);
+	background-color: rgba(0, 0, 0, 0.3);
+	color: white;
 }
 
 a{
 	text-decoration: none;
+}
+
+h1{
+	margin: 3vw 0vw;
 }

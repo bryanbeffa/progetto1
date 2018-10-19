@@ -8,7 +8,7 @@
 
 		//metodo che stampa i valori dei campi
 		function printValues(){
-			var queryString = decodeURIComponent(window.location.search); //parsing
+			var queryString = decodeURIComponent(window.location.search);
 			queryString = queryString.substring(1);
 			var queries = queryString.split("&");
 			for (var i = 0; i < queries.length; i++){
@@ -43,11 +43,4 @@
 					+ "&profession=" + inputList[11].value;
 					window.location.href = 'registrazione.html' + queryString;		
 			}
-		}
-
-
-		//metodo che conferma i dati e permette l'accesso alla pagina di visualizzazione dei dati
-		function confirmData(){
-			if(confirm("Sei sicuro?"))
-				window.location.href = "tuttiDati.php"
 		}
