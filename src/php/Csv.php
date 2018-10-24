@@ -1,4 +1,7 @@
 <?php
+	/**
+	* Classe contenente dei metodi utili per i file di formato csv.
+	*/
 	class Csv{
 		/**
 		 * Percorso in cui si trovo o verrà creato il file.
@@ -44,7 +47,7 @@
     	    //apro o creo il file se non esiste
     	    if(file_exists($this->getPath())){
 				//salvo i dati del file
-				$current = file_get_contents($this->getPath()) . "\n".$data;
+				$current = file_get_contents($this->getPath()) . "\n". $data;
 				//apro il file in scrittura
 				$csvFile = fopen($this->getPath(), "w") or die ("Impossibile aprire il file!");
 				//scrivo nel file i dati inseriti dall'utente
@@ -77,12 +80,14 @@
 				//salvo i dati del file
 				$data = file_get_contents($this->getPath());
 				$table = "<table>";
-				$rows = explode(',', $data);
+				$rows = explode('//', $data);
 				//conto il numero di righe del file csv e tolgo 1, perché l'utlimo campo dell'array è vuoto
 				$rowsLength = count($rows)-1;
 
 				//creo il nome delle colonne
-				$table .=  "<tr><th>Nome</th>
+				$table .=  "<tr>
+							<th>id</th>
+							<th>Nome</th>
 							<th>Cognome</th>
 							<th>Data di nascita</th>
 							<th>Indirizzo</th>
@@ -100,10 +105,10 @@
 				//ripeto per il numero totale di utenti
 				for ($i=0; $i < $rowsLength; $i++) {
 					$table .= "<tr>";
-					//separo tutti i campi di un utente
 					$fields = explode(';', $rows[$i]);
 					$fieldsLength = count($fields);
-					for ($j=0; $j < $fieldsLength; $j++) { 
+					//viene aggiunto anche
+					for ($j=0; $j < $fieldsLength; $j++) {
 						$table .= "<td>" . $fields[$j] . "</td>";
 					}
 					$table .= "</tr>";
@@ -113,6 +118,18 @@
 				$table .= "</table>";
 				return $table;
     		}
+    	}
+
+    	/**
+    	 * Metodo che ritorna il numero di righe del file csv
+    	 */
+    	public function getDataRows(){
+    		//salvo i dati del file
+			$data = file_get_contents($this->getPath());
+			$rows = explode('//', $data);
+			//conto il numero di righe del file csv e tolgo 1, perché l'utlimo campo dell'array è vuoto
+			$rowsLength = count($rows)-1;
+			return $rowsLength;
     	}
 	};
 ?>

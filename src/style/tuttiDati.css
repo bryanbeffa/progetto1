@@ -54,7 +54,7 @@ td{
 }
 
 td:nth-child(odd){
-	background-color: rgba(100, 100, 100, 0.2);
+	background-color: rgba(100, 100, 100, 0.1);
 }
 
 tr{
@@ -62,7 +62,7 @@ tr{
 }
 
 tr:hover{
-	background-color: rgba(0, 0, 0, 0.3);
+	background-color: rgba(0, 0, 0, 0.2);
 	color: white;
 }
 

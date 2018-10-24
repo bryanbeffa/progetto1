@@ -1,4 +1,4 @@
-//variabile che contiene l'elemento 
+		//variabile che contiene l'elemento 
 		var formMask = document.getElementById("formMask");
 		//variabile contenete la lista dei input in cui inserire i valori
 		var inputList = document.getElementsByTagName("input");

@@ -135,7 +135,7 @@
 		function checkText(id){
 			var text = inputList[id].value;
 			text = text.trim();
-			var regex = /[a-zA-Z]+$/;
+			var regex = /^[a-zA-Z èéëÈÉËìíïÌÍÏàáäÀÁÄòóöÒÓÖùúüÙÚÜ]+$/;
 			if(regex.test(text) && text.length <= 50){
 				inputList[id].style.borderBottom = "0.2vw solid green";
 				return true;

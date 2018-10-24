@@ -58,7 +58,7 @@
 				<td><input readonly="readonly" type="text" name="profession"></td>
 			</tr>
 			<tr>
-				<td id="buttonsAlign"><input type="button" name="modify" value="Modifica" class="button" onclick="modifyData()"></td>
+				<td id="buttonsAlign"><input type="button" name="modify" value="Correggi" class="button" onclick="modifyData()"></td>
 				<td><input type="submit" name="next" value="Avanti" class="button"></td>
 			</tr>
 		</table>
@@ -66,7 +66,7 @@
 
 	<script type="text/javascript" src="script/riassuntoDati.js"></script>
 	<?php 
-		require 'php/riassuntoDati.php';
+		require 'php/riassunto.php';
 	?>
 </body>
 </html>
