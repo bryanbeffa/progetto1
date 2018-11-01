@@ -11,6 +11,7 @@
 		 * Caratteri consentiti: letterali e spazio. 
 		 */
 		public function checkTextFields($text){
+			$text = trim($text);
 			if(preg_match("/^[a-zA-Z èéëÈÉËìíïÌÍÏàáäÀÁÄòóöÒÓÖùúüÙÚÜ]+$/", $text) && strlen($text) <= 50){
 				return true;
 			}
