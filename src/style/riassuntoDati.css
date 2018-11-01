@@ -6,60 +6,105 @@
 
 body{
 	background-color: black;
-  	background-repeat: no-repeat;
-  	background-image: url("img/index.jpg");
-  	background-size: 100% auto;
+  	background-image: url("img/pattern.jpg");
+  	background-size: 30vw 30vw;
+  	background-position: center;
+  	background-repeat: repeat;
   	text-align: center;
-  	background-attachment: fixed; 
-}
-
-input{
-	width: 80%;
-	font-size: 1.3vw;
-	border: 0.1vw solid;
-	margin-bottom: 0.3vw;
-	background-color: rgba(255, 255, 255, 0.7);
-	padding: 0.2vw 0.5vw;
-	color: black;
-}
-
-#formMask{
-	font-size: 1.3vw;
-	background-color: rgba(0, 0, 0, 0.7);
-	width: 40%;
-	margin: auto;
-	text-align: center;
-	color: white;
-}
-
-.button{
-	color: black;
-	width: 50%;
-	margin-top: 2vw;
-	font-size: 1.2vw;
-	padding: 0.4vw;
-	border: none;
-	margin-top: 2vw;
-	background-color: rgba(255, 255, 255, 0.4);
-	-webkit-transition: width 0.5s;
-  	transition: width 0.5s;
-	cursor: pointer;
-}
-
-.button:hover{
-	width: 90%;
+	font-family: sans-serif;
+	background-attachment: fixed;
+	overflow-x: hidden;
 }
 
 table{
 	width: 100%;
 }
 
+.button{
+	color: black;
+	width: 200px;
+	margin-top: 2vw;
+	font-size: 110%;
+	padding: 0.4vw;
+	border: none;
+	margin-top: 2vw;
+	background-color: rgba(0, 250, 255, 0.8);
+	-webkit-transition: width 0.5s;
+  	transition: width 0.5s;
+	cursor: pointer;
+}
+
 #buttonsAlign{
 	text-align: center;
 }
+@media only screen and (min-width: 700px) {
+	input{
+		width: 80%;
+		font-size: 110%;
+		border: none;
+		background-color: rgba(255, 255, 255, 0.7);
+		padding: 0.2vw 0.5vw;
+		color: black;
+		background-color: rgba(0, 250, 255, 0.3);
+		color: white;
+		margin-top: 20px;
+	}
 
-td{
-	width: 50%;
-	height: 2vw;
+	.button:hover{
+		width: 90%;
+		background-color: rgb(0, 250, 255);
+	}
+	
+	#formMask{
+		font-size: 130%;
+		background-color: rgba(0, 0, 0, 0.7);
+		width: 700px;
+		margin: auto;
+		margin-top: 20px;
+		text-align: center;
+		color: white;
+		border: none;
+		border-radius: 0.4vw;
+		border: 0.1vw solid rgb(0, 250, 255);
+		margin-bottom: 20px;
+	}
+	
+	td{
+		width: 50%;
+	}
 }
 
+@media only screen and (max-width: 700px) {
+	#formMask{
+		font-size: 130%;
+		background-color: rgba(0, 0, 0, 0.7);
+		width: 100%;
+		margin: auto;
+		margin-top: 20px;
+		text-align: center;
+		color: white;
+		border: none;
+		border-radius: 0.4vw;
+		border: 0.1vw solid rgb(0, 250, 255);
+	}
+
+	td{
+		width: 50%;
+	}
+
+	input{
+		width: 95%;
+		font-size: 100%;
+		border: none;
+		background-color: rgba(255, 255, 255, 0.7);
+		padding: 0.2vw 0.5vw;
+		color: black;
+		background-color: rgba(0, 250, 255, 0.3);
+		color: white;
+		margin-top: 20px;
+	}
+
+	.button{
+		width: 100%;
+	}
+}

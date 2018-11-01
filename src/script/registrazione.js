@@ -5,8 +5,6 @@
 		//variabile contenente il valore del genere, valore di default M
 		var genderValue = "M";
 
-		centreFormMask();
-
 		//metodo che setta i valori in caso di ritorno dalla pagina di riassunto dati
 		function setValues(){
 			var queryString = decodeURIComponent(window.location.search); //parsing
@@ -24,14 +22,6 @@
 					}
 				}
 			}
-		}
-
-		//metodo che c'entra la maschera che contiene il bottone
-		function centreFormMask(){
-			var formMaskHeight = formMask.offsetHeight;
-			var availHeight = window.innerHeight;
-			
-			formMask.style.marginTop = (availHeight-formMaskHeight)/2 + "px";
 		}
 
 		//metodo che cancella tutti i dati e viene richiamato quando carica la pagina
@@ -217,7 +207,7 @@
 		function checkPhoneNumber(id){
 			var number = inputList[id].value;
 			number = number.trim();
-			var regex = /^[0-9 +-]+$/;
+			var regex = /\+?(\d*)\d{9}/;
 			//controllo che il numero sia composto da almeno 10 caratteri e massimo 30. Si accettano "+", spazi e "-"
 			if(regex.test(number)){
 				inputList[id].style.borderBottom = "0.2vw solid green";

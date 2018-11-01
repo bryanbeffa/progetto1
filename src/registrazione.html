@@ -6,11 +6,13 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link rel="stylesheet" type="text/css" href="style/registrazione.css">
 </head>
-<body onresize="centreFormMask()" onload="loadPage(), setValues()">
+<body onload="loadPage(), setValues()">
 	<form id="formMask">
 		<table>
 			<tr>
 				<td><label>Nome*:</label></td>
+			</tr>
+			<tr>
 				<td><input type="text" name="name" placeholder="Your name" id="name" onkeyup="checkText(0)">
 					<sub class="tooltip">
 						<img src="style/img/info.png" class="info-logo">  
@@ -27,6 +29,8 @@
 			</tr>
 			<tr>
 				<td><label>Cognome*:</label></td>
+			</tr>
+			<tr>
 				<td><input type="text" name="surname" placeholder="Your surname" id="surname" onkeyup="checkText(1)">
 					<sub class="tooltip">
 						<img src="style/img/info.png" class="info-logo">
@@ -43,6 +47,8 @@
 			</tr>
 			<tr>
 				<td><label>Data di nascita*:</label></td>
+			</tr>
+			<tr>
 				<td><input type="date" name="date" id="date" onkeyup="checkDate(2)" onchange="checkDate(2)">
 					<sub class="tooltip">
 						<img src="style/img/info.png" class="info-logo">
@@ -57,6 +63,8 @@
 			</tr>
 			<tr>
 				<td><label>Indirizzo*:</label></td>
+			</tr>
+			<tr>
 				<td><input type="text" name="address" placeholder="Your address" id="address" onkeyup="checkText(3)">
 					<sub class="tooltip">
 						<img src="style/img/info.png" class="info-logo">
@@ -73,6 +81,8 @@
 			</tr>
 			<tr>
 				<td><label>No. Civico*:</label></td>
+			</tr>
+			<tr>
 				<td><input type="text" name="civicNumber" placeholder="Your Civic Number" id="civicNumber" onkeyup="checkCivicNumber(4)">
 					<sub class="tooltip">
 						<img src="style/img/info.png" class="info-logo">
@@ -88,6 +98,8 @@
 			</tr>
 			<tr>
 				<td><label>Città*:</label></td>
+			</tr>
+			<tr>
 				<td><input type="text" name="city" placeholder="Your city" id="city" onkeyup="checkText(5)">
 					<sub class="tooltip">
 						<img src="style/img/info.png" class="info-logo">
@@ -104,6 +116,8 @@
 			</tr>
 			<tr>	
 				<td><label>Nap*:</label></td>
+			</tr>
+			<tr>
 				<td><input type="text" name="nap" placeholder="Your Nap" id="nap" onkeyup="checkNap(6)">
 					<sub class="tooltip">
 						<img src="style/img/info.png" class="info-logo">
@@ -118,13 +132,17 @@
 			</tr>	
 			<tr>	
 				<td><label>No. Telefono*:</label></td>
+			</tr>
+			<tr>
 				<td><input type="text" name="tel" placeholder="Your tel number" id="phoneNumber" onkeyup="checkPhoneNumber(7)">
 					<sub class="tooltip">
 						<img src="style/img/info.png" class="info-logo">
 						<span class="tooltiptext">
 							<p>
-								Caratteri consentiti:<br>
-								<b>cifre, spazi e "-"</b><br>
+								Formati consentiti:<br>
+								<b> +41728202482 <br>
+									0041728202482 <br>
+									0728202482</b>
 							</p>
 						</span>
 					</sub>
@@ -132,6 +150,8 @@
 			</tr>
 			<tr>
 				<td><label>E-mail*:</label></td>
+			</tr>
+			<tr>
 				<td><input type="text" name="email" placeholder="Your e-mail" id="email" onkeyup="checkEmail(8)">
 					<sub class="tooltip">
 						<img src="style/img/info.png" class="info-logo">
@@ -145,13 +165,17 @@
 			</tr>
 			<tr>
 				<td><label>Genere (sesso)*:</label></td>
+			</tr>
+			<tr>
 				<td>F<input type="radio" name="gender" class="gender" value="F" onclick="setGender('F')">
 					M<input type="radio" name="gender" class="gender" value="M" id="male" onclick="setGender('M')"><br>
-					Altro<input type="radio" name="gender" class="gender" value="Altro" onclick="setGender('Altro')">
+					Altro<input type="radio" name="gender" class="gender" id="altro" value="Altro" onclick="setGender('Altro')">
 				</td>
 			</tr>
 			<tr>	
 				<td><label>Hobby:</label></td>
+			</tr>
+			<tr>
 				<td><input type="text" name="hobby" placeholder="Your hobby" onkeyup="checkHobby(12)">
 					<sub class="tooltip">
 						<img src="style/img/info.png" class="info-logo">
@@ -165,6 +189,8 @@
 			</tr>
 			<tr>	
 				<td><label>Professione:</label></td>
+			</tr>
+			<tr>
 				<td><input type="text" name="profession" placeholder="Your profession" onkeyup="checkHobby(13)">
 					<sub class="tooltip">
 						<img src="style/img/info.png" class="info-logo">
@@ -181,6 +207,8 @@
 			</tr>
 			<tr id="buttonsAlign">
 				<td><input type="button" name="cancel" value="Cancella" onclick="deleteData()" class="button"></td>
+			</tr>
+			<tr>
 				<td><input type="button" name="next" value="Avanti" class="button" onclick="enableNextButton()"></td>
 			</tr>
 		</table>

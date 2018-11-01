@@ -6,7 +6,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link rel="stylesheet" type="text/css" href="style/riassuntoDati.css">
 </head>
-<body onresize="centreFormMask()">
+<body>
 	<form id="formMask" action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']);?>" method="POST">
 		<table>
 			<tr>

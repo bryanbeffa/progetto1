@@ -3,63 +3,111 @@
 	margin: 0px;
 }
 
-/*desktop style*/	
 body{
 	background-color: black;
-  	background-image: url("img/index.jpg");
-  	background-size: 100%;
+  	background-image: url("img/pattern.jpg");
+  	background-size: 30vw 30vw;
   	background-position: center;
-  	background-repeat: no-repeat;
+  	background-repeat: repeat;
   	text-align: center;
 	font-family: sans-serif;
 	background-attachment: fixed;
 	overflow: hidden;
-}
-		
-#signUpButton:hover{
-	width: 70%;
+	color: rgb(0, 250, 255);
+	text-shadow: 2px 2px 2px black;
 }
 
-#signUpButton{
-	background-color: rgba(255, 255, 255, 0.6);
-	-webkit-transition: width 0.5s;
-  	transition: width 0.5s;
-	cursor: pointer;
-	border-radius: 4px;
-	border: none;
-	color: black;
+/*desktop style*/	
+@media only screen and (min-width: 700px) {
+			
+
+	#signUpButton:hover{
+		width: 70%;
+	}
+	
+	#signUpButton{
+		background-color: rgba(0, 250, 255, 0.8);
+		-webkit-transition: width 0.5s;
+	  	transition: width 0.5s;
+		cursor: pointer;
+		border-radius: 4px;
+		border: none;
+		color: black;
+	}
+		
+	a{
+		text-decoration: none;
+	}
+			
+	button{
+		color: white;
+		width: 30%;
+		margin: 2px;
+		font-size: 1.4em;
+		padding: 1%;
+		border: none;
+		margin: 2vw 0vw 1vw 0vw;
+		font-weight: bold;
+	}
+	
+	#divMask h1{
+		font-size: 2.2em;
+		font-family: "helvetica";
+	}
+	
+	#divMask h2{
+		font-size: 1.8em;
+	}
+	
+	#divMask{
+		visibility: hidden;
+		width: 700px;
+		background-color: rgba(0,0,0, 0.7);
+		margin: auto;
+		border: 0.1vw solid rgba(0, 250, 255, 0.8);
+		border-radius: 0.4vw;
+	}
 }
 	
-a{
-	text-decoration: none;
-}
-		
-button{
-	color: white;
-	width: 30%;
-	margin: 2px;
-	font-size: 1.4vw;
-	padding: 1%;
-	border: none;
-	margin-top: 2vw;
-	font-weight: bold;
-}
-
-#divMask h1{
-	font-size: 2.8vw;
-	font-family: "helvetica";
-}
-
-#divMask h2{
-	font-size: 1.8vw;
-}
-
-#divMask{
-	visibility: hidden;
-	color: white;
-	width: 40%;
-	background-color: rgba(0,0,0, 0.4);
-	margin-left: 30%;
-}
-
 /* Mobile size */
+@media only screen and (max-width: 700px) {
+	#divMask{
+		visibility: hidden;
+		width: 100%;
+		background-color: rgba(0,0,0, 0.7);
+		margin: auto;
+		padding: 10% 0%;
+		border: 0.1vw solid rgba(0, 250, 255, 0.8);
+		border-radius: 0.4vw;
+	}
+
+	#divMask h1{
+		font-size: 160%;
+		font-family: "helvetica";
+	}
+	
+	#divMask h2{
+		font-size: 140%;
+	}
+
+	#signUpButton{
+		background-color: rgba(0, 250, 255, 0.8);
+		-webkit-transition: width 0.5s;
+	  	transition: width 0.5s;
+		cursor: pointer;
+		border-radius: 4px;
+		border: none;
+		color: black;
+	}
+
+	button{
+		color: white;
+		width: 100%;
+		margin: 2px;
+		font-size: 1.4em;
+		padding: 1%;
+		border: none;
+		margin: 2vw 0vw 1vw 0vw;
+		font-weight: bold;
+	}
+}

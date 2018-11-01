@@ -21,8 +21,19 @@
 		 * Metodo che controlla che la data non sia futura.
 		 */
 		public function checkDate($date){
-			$today = date("Y/m/d");
-			var_dump($today);
+			$today = new DateTime();
+			try{
+				$date_value = new DateTime($date);
+				if ($date_value > $today){
+					return false;
+				}else{
+					return true;
+				}
+			}catch(Exception $e){
+				return false;
+			}
+
+			
 		}
 
 		/**
@@ -42,7 +53,9 @@
 		 * Metodo che controlla i campi hobby e professione
 		 */
 		public function checkHobbyAndProfession($value){
-			if(preg_match("/^[a-zA-Z èéëÈÉËìíïÌÍÏàáäÀÁÄòóöÒÓÖùúüÙÚÜ.,;: ]+$/", $value) && strlen($value) <= 50){
+			if($value == null)
+				return true;
+			if(preg_match("/^[a-zA-Z èéëÈÉËìíïÌÍÏàáäÀÁÄòóöÒÓÖùúüÙÚÜ.,;: ]+$/", $value) && strlen($value) <= 500){
 				return true;
 			}
 			return false;
@@ -54,6 +67,37 @@
 		public function checkCivicNumber($civicNumber){
 			if(preg_match("/^[a-zA-Z0-9]+$/", $civicNumber) && strlen($civicNumber) <= 4 && strlen($civicNumber) > 0 && 
 				($civicNumber != "0" &&  $civicNumber != "00" && $civicNumber != "000" && $civicNumber != "0000")){
+				return true;
+			}
+			return false;
+		}
+
+		/**
+		 * Metodo che controlla il campo genere.
+		 */
+		public function checkGender($gender){
+			$gender = strtolower($gender);
+			if($gender == 'm' || $gender == 'f' || $gender == 'altro'){
+				return true;
+			}
+			return false;
+		}
+
+		/**
+		 * Metodo che controlla il campo nap
+		 */
+		public function checkNap($nap){
+			if(preg_match("/^[0-9]+$/", $nap) && strlen($nap) > 3 && strlen($nap) < 6){
+				return true;
+			}
+			return false;
+		}
+
+		/**
+		 * Metodo che controlla il campo del telefono.
+		 */
+		public function checkPhoneNumber($number){
+			if(preg_match("/\+?(\d*)\d{9}/", $number)){
 				return true;
 			}
 			return false;

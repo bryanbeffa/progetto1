@@ -5,71 +5,134 @@
 }
 
 body{
-	background-color: white;
+	background-color: black;
+  	background-image: url("img/pattern.jpg");
+  	background-size: 30vw 30vw;
+  	background-position: center;
+  	background-repeat: repeat;
   	text-align: center;
+	font-family: sans-serif;
+	background-attachment: fixed;
+	color: rgb(0, 250, 255);
 }
 
-#formMask{
-	font-size: 0.9vw;
-	width: 100%;
-	text-align: center;
-	color: white;
-}
-
-#button{
-	color: black;
-	width: 30%;
-	margin: 2px;
-	font-size: 1.4vw;
-	padding: 1%;
-	border: 0.1vw solid black;
-	margin-top: 2vw;
-	font-weight: bold;
-	margin-bottom: 3vw;
-	cursor: pointer;
-}
-
-#button:hover{
-	background-color: rgb(255, 255, 255);
-}
-
-table{
-	width: 100%;
-	border-collapse: collapse;
-	margin-bottom: 0.2vw;
-	border: 0.1vw solid black;
+form{
+	margin-top: 20px;
 }
 
 th{
-	background-color: black;
-	color: white;
-	height: 2.3vw;
+	color: rgb(0, 250, 255);
 }
 
-td{
-	height: 2vw;
-	color: black;
-	word-wrap: break-word;
-	padding: none;
+@media only screen and (min-width: 700px) {
+
+	#button{
+		width: 300px;
+		font-size: 130%;
+		padding: 10px 20px;
+		background-color: rgba(0, 250, 255, 0.8);
+		-webkit-transition: width 0.5s;
+		transition: width 0.5s;
+		cursor: pointer;
+		border-radius: 4px;
+		border: none;
+		color: black;
+		margin: 20px 0px;
+	}
+	
+	#button:hover{
+		background-color: rgb(0, 250, 255);
+		width: 400px;
+	}
+	
+	table{
+		border-collapse: collapse;
+		margin-bottom: 0.2vw;
+		border: 0.1vw solid rgba(0, 250, 255, 0.8);
+		min-width: 100%;
+		color: white;
+	}
+	
+	th{
+		background-color: black;
+		padding: 10px;
+		border-bottom: 0.1vw solid rgba(0, 250, 255, 0.8);
+	}
+	
+	td{
+		word-wrap: break-word;
+		padding: 5px 0px;
+		border-bottom: 0.1vw solid rgba(0, 250, 255, 0.8);
+	}
+
+	tr{
+		background-color: rgb(0, 0, 0, 0.7);
+	}
+		
+	tr:hover{
+		background-color: rgba(0, 250, 255, 0.8);
+		color: black;
+	}
+
+	a{
+		text-decoration: none;
+	}
+	
+	h1{
+		margin: 3vw 0vw;
+	}
 }
 
-td:nth-child(odd){
-	background-color: rgba(100, 100, 100, 0.1);
-}
+@media only screen and (max-width: 700px) {
 
-tr{
-	background-color: rgba(255, 255, 255, 0.8);
-}
-
-tr:hover{
-	background-color: rgba(0, 0, 0, 0.2);
-	color: white;
-}
-
-a{
-	text-decoration: none;
-}
-
-h1{
-	margin: 3vw 0vw;
+	#button{
+		width: 100%;
+		font-size: 130%;
+		padding: 10px 20px;
+		background-color: rgba(0, 250, 255, 0.8);
+		-webkit-transition: width 0.5s;
+		transition: width 0.5s;
+		cursor: pointer;
+		border-radius: 4px;
+		border: none;
+		color: black;
+		margin: 20px 0px;
+	}
+	
+	#button:hover{
+		background-color: rgb(0, 250, 255);
+	}
+	
+	table{
+		border-collapse: collapse;
+		margin-bottom: 0.2vw;
+		border: 0.1vw solid black;
+		border: 0.1vw solid rgba(0, 250, 255, 0.8);
+		width: 100%;
+	}
+	
+	th{
+		background-color: black;
+		padding: 10px;
+		border-bottom: 0.1vw solid rgba(0, 250, 255, 0.8);
+	}
+	
+	td{
+		word-wrap: break-word;
+		padding: 5px 0px;
+		border-bottom: 0.1vw solid rgba(0, 250, 255, 0.8);
+	}
+	
+	tr{
+		background-color: rgba(0, 0, 0, 0.7);
+		color: white;
+	}
+	
+	a{
+		text-decoration: none;
+	}
+	
+	h1{
+		margin: 3vw 0vw;
+	}
 }

@@ -3,7 +3,6 @@
 		//variabile contenete la lista dei input in cui inserire i valori
 		var inputList = document.getElementsByTagName("input");
 
-		centreFormMask();
 		printValues();
 
 		//metodo che stampa i valori dei campi
@@ -16,14 +15,6 @@
 				var realValue = queries[i].split("=");
 				inputList[i].value = realValue[realValue.length-1];
 			}
-		}
-
-		//metodo che c'entra la maschera che contiene il bottone
-		function centreFormMask(){
-			var formMaskHeight = formMask.offsetHeight;
-			var availHeight = window.innerHeight;
-			
-			formMask.style.marginTop = (availHeight-formMaskHeight)/2 + "px";
 		}
 
 		//metodo che chiede se si vogliono modificare i dati
