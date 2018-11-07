@@ -47,26 +47,9 @@
 				}
 			}
 		}
- 
-		//metodo che riceve in un array quali sono i campi principali (obbligatori)
-		function getMainInputs(){
-			var name = document.getElementById("name");
-			var surname = document.getElementById("surname");
-			var date = document.getElementById("date");
-			var address = document.getElementById("address");
-			var civicNumber = document.getElementById("civicNumber");
-			var city = document.getElementById("city");
-			var nap = document.getElementById("nap");
-			var phoneNumber = document.getElementById("phoneNumber");
-			var email = document.getElementById("email");
-
-			var mainInputs = [name, surname, date, address, civicNumber, city, nap, phoneNumber, email]; 
-			return mainInputs;
-		}
 
 		//metodo che controlla che tutti i campi principali (obbligatori) sono stati compilati
-		function checkMainInputs(){
-			var mainInputs = getMainInputs();
+		function checkInputValues(){
 			/* Controllo tutti che tutti gli input abbiano un valore valido. 
 			   Il valore del campo genere non viene controllato perché non può mai essere non valido
 			*/
@@ -74,7 +57,7 @@
 				if(checkDate(2) && checkText(3)){
 					if(checkCivicNumber(4) && checkText(5)){
 						if(checkNap(6) && checkPhoneNumber(7)){
-							if(checkEmail(8)){
+							if(checkEmail(8) && checkHobby(12) && checkProfession(13)){
 								return true;
 							}
 						}
@@ -86,7 +69,7 @@
 
 		//metodo che abilita abilita il funzionamento del bottone avanti se tutti i campi obbligatori sono compilati e invia i valori alla pagina di riassunto
 		function enableNextButton(){
-			if(checkMainInputs()){
+			if(checkInputValues()){
 				if(confirm("Sicuro di voler procedere?")){
 					var queryString = "?name=" + inputList[0].value 
 					+ "&surname=" + inputList[1].value 
@@ -166,7 +149,8 @@
 		//metodo che controllo che il numero di caratteri del campo hobby non sia superiore a 500 caratteri
 		function checkHobby(id){
 			var hobby = inputList[id].value;
-			if(hobby.length <= 500){
+			var regex = /^[a-zA-Z èéëÈÉËìíïÌÍÏàáäÀÁÄòóöÒÓÖùúüÙÚÜ.,: ]+$/;
+			if(hobby == null || hobby == "" || (hobby.length <= 500 && regex.test(hobby))){
 				inputList[id].style.borderBottom = "0.2vw solid green";
 				return true;
 			}
@@ -177,7 +161,8 @@
 		//metodo che controllo che il numero di caratteri del campo profession non sia superiore a 500 caratteri
 		function checkProfession(id){
 			var profession = inputList[id].value;
-			if(profession.length <= 500){
+			var regex = /^[a-zA-Z èéëÈÉËìíïÌÍÏàáäÀÁÄòóöÒÓÖùúüÙÚÜ.,: ]+$/;
+			if(profession == null || profession == "" || (profession.length <= 500 && regex.test(profession))){
 				inputList[id].style.borderBottom = "0.2vw solid green";
 				return true;
 			}

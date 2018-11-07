@@ -56,7 +56,7 @@
 		public function checkHobbyAndProfession($value){
 			if($value == null)
 				return true;
-			if(preg_match("/^[a-zA-Z èéëÈÉËìíïÌÍÏàáäÀÁÄòóöÒÓÖùúüÙÚÜ.,;: ]+$/", $value) && strlen($value) <= 500){
+			if(preg_match("/^[a-zA-Z èéëÈÉËìíïÌÍÏàáäÀÁÄòóöÒÓÖùúüÙÚÜ.,: ]+$/", $value) && strlen($value) <= 500){
 				return true;
 			}
 			return false;
